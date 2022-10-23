@@ -10,7 +10,7 @@
     <servlet-name>UsuariosController</servlet-name>
     <url-pattern>/UsuariosController</url-pattern>
   </servlet-mapping>
-  <display-name>crud</display-name> 
+  <display-name>crud</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -28,5 +28,55 @@
   <servlet-mapping>
     <servlet-name>AuthController</servlet-name>
     <url-pattern>/AuthController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>peliculasDAO</display-name>
+    <servlet-name>peliculasDAO</servlet-name>
+    <servlet-class>nombredominio.modelsDAO.peliculasDAO</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>peliculasDAO</servlet-name>
+    <url-pattern>/peliculasDAO</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PeliculaController</display-name>
+    <servlet-name>PeliculaController</servlet-name>
+    <servlet-class>nombredominio.controllers.PeliculaController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PeliculaController</servlet-name>
+    <url-pattern>/PeliculaController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SerieController</display-name>
+    <servlet-name>SerieController</servlet-name>
+    <servlet-class>nombredominio.controllers.SerieController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SerieController</servlet-name>
+    <url-pattern>/SerieController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DocumentalesController</display-name>
+    <servlet-name>DocumentalesController</servlet-name>
+    <servlet-class>nombredominio.controllers.DocumentalesController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DocumentalesController</servlet-name>
+    <url-pattern>/DocumentalesController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DocumentalController</display-name>
+    <servlet-name>DocumentalController</servlet-name>
+    <servlet-class>nombredominio.controllers.DocumentalController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DocumentalController</servlet-name>
+    <url-pattern>/DocumentalController</url-pattern>
   </servlet-mapping>
 </web-app>

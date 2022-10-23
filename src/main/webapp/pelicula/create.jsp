@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ include file="login-validation.jsp"%>
+<%@ page import="nombredominio.modelsDAO.peliculaDAO"%>
+<%@ page import="nombredominio.models.pelicula"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>PELCULAS | CREATE</title>
 <link href="./resources/css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
@@ -22,5 +23,23 @@
 			</nav>
 		</header>
 	</div>
+	<h1>PELICULAS CREATE</h1>
+	<div class="form">
+		<form method="POST" action="PeliculaController?action=create">
+
+			<input type="hidden" name="id">
+			<p>Nombre:</p>
+			<input type="text" name="nombre"> <br>
+			<p>Director:</p>
+			<input type="text" name="director"> <br>
+			<p>Genero:</p>
+			<input type="text" name="genero">
+
+			<button type="submit">Enviar</button>
+		</form>
+	</div>
+	<footer>
+		<address>Copyrigth &copy; Peliculas.com</address>
+	</footer>
 </body>
 </html>

@@ -1,9 +1,5 @@
 package nombredominio.modelsDAO;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import jakarta.servlet.http.HttpServletResponse;
 import nombredominio.config.Conexion;
 import nombredominio.models.usuario;
 
@@ -28,7 +23,8 @@ Conexion conexion = new Conexion();
 	ArrayList<usuario> usuarios = new ArrayList<usuario>();
 	
 	public usuario save(usuario usuario) {
-		String sql = "INSERT INTO usuarios (nombre, email) VALUES ('" + usuario.getNombre() + "', '"+ usuario.getEmail()+"')";
+		String sql = "INSERT INTO usuarios (nombre, email, password) VALUES ('" + usuario.getNombre() + "', '"+ 
+											usuario.getEmail()+"', '"+ usuario.getPassword()+"')";
 		try {
 			conn = conexion.getConnection();
 			ps = conn.prepareStatement(sql);

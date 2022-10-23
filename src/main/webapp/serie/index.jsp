@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="nombredominio.modelsDAO.usuarioDAO"%>
-<%@ page import="nombredominio.models.usuario"%>
+<%@ page import="nombredominio.modelsDAO.serieDAO"%>
+<%@ page import="nombredominio.models.serie"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ include file="../login-validation.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="daw"%>
@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>USUARIOS | index</title>
+<title>Serie | index</title>
 <link href="./resources/css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
@@ -33,21 +33,21 @@
 				<tr>
 					<th>#</th>
 					<th>Nombre</th>
-					<th>Email</th>
-					<th>Password</th>
-					<th><a href="UsuariosController?action=create">Crear usuario</a></th>
+					<th>Director</th>
+					<th>Genero</th>
+					<th><a href="serieController?action=create">Crear serie</a></th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody class="table-group-divider">
-				<daw:forEach var="usuario" items="${usu}">
+				<daw:forEach var="serie" items="${seri}">
 					<tr>
-						<td>${usuario.id}</td>
-						<td>${usuario.nombre}</td>
-						<td>${usuario.email}</td>
-						<td>${usuario.password}</td>
-						<td><a href="UsuariosController?action=edit&id=${usuario.id}">Edit</a>
-							<a href="UsuariosController?action=delete&id=${usuario.id}">Delete</a>
+						<td>${serie.id}</td>
+						<td>${serie.nombre}</td>
+						<td>${serie.director}</td>
+						<td>${serie.genero}</td>
+						<td><a href="serieController?action=edit&id=${serie.id}">Edit</a>
+							<a href="serieController?action=delete&id=${serie.id}">Delete</a>
 						</td>
 					</tr>
 				</daw:forEach>
@@ -56,11 +56,11 @@
 	</div>
 
 	<!--  
-			        	el atributo items recoge el elemento que trae mi controller. Seria equivalente al request.getAttribute()
+			        	el atributo items recoge el elemnto que trae mi controller. Seria equivalente al request.getAttribute()
 			        	el atributo var seria la variable local para cada iteracion del forEach
 			        -->
-	<daw:forEach var="usuario" items="${usu}">
-		<daw:if test="${usuario.id == 1}">
+	<daw:forEach var="serie" items="${seri}">
+		<daw:if test="${serie.id == 1}">
 		</daw:if>
 	</daw:forEach>
 
@@ -72,14 +72,8 @@
 		<daw:out value="${clase}"></daw:out>
 	</p>
 
-	<daw:forEach var="usuario" items="${usu}">
-		<!-- 
-		                    El atributo test evalua una codicion
-		                    choose es similar a un switch y contiene lo siguiente
-			                    when seria el equivalente al case
-			                    otherwise seria equivalente al default
-	                    -->
+	<daw:forEach var="serie" items="${seri}">
 	</daw:forEach>
-<footer><address>Copyrigth &copy; Peliculas.com </address></footer>
+	<footer><address>Copyrigth &copy; Peliculas.com </address></footer>
 </body>
 </html>
